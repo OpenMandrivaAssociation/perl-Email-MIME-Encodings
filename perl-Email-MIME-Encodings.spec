@@ -16,7 +16,6 @@ Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_versi
 BuildRequires:	perl-devel
 %endif
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module simply wraps MIME::Base64 and MIME::QuotedPrint so that you can
