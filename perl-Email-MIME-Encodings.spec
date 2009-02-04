@@ -1,8 +1,8 @@
-%define module	Email-MIME-Encodings
-%define name	perl-%{module}
-%define version 1.31.1
-%define up_version 1.311
-%define release %mkrel 3
+%define module	    Email-MIME-Encodings
+%define name	    perl-%{module}
+%define up_version  1.312
+%define version     %perl_convert_version %{up_version}
+%define release     %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -11,10 +11,7 @@ Summary:	A unified interface to MIME encoding and decoding
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		    http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
