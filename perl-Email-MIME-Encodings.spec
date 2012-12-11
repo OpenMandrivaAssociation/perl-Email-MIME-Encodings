@@ -1,19 +1,17 @@
 %define module	    Email-MIME-Encodings
-%define name	    perl-%{module}
 %define up_version  1.313
-%define version     %perl_convert_version %{up_version}
-%define release     %mkrel 1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{module}
+Version:	%perl_convert_version %{up_version}
+Release:	2
 Summary:	A unified interface to MIME encoding and decoding
 License:	GPL or Artistic
 Group:		Development/Perl
-URL:		    http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
+URL:		http://search.cpan.org/dist/%{module}
+Source:		http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
+
+BuildRequires:	perl-devel
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module simply wraps MIME::Base64 and MIME::QuotedPrint so that you can
@@ -25,22 +23,46 @@ Provides a number of useful methods for manipulating MIME messages.
 %setup -q -n %{module}-%{up_version} 
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README Changes
 %{perl_vendorlib}/Email
 %{_mandir}/*/*
+
+%changelog
+* Wed May 20 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.313.0-1mdv2010.0
++ Revision: 377826
+- new version
+- new release
+- standardised version
+
+* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.31.1-3mdv2009.0
++ Revision: 241211
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Jul 04 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.31.1-1mdv2008.0
++ Revision: 48065
+- update to new version 1.311
+
+
+* Thu Sep 28 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.31.0-1mdv2007.0
+- new version
+
+* Thu Aug 31 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.3-2mdv2007.0
+- Rebuild
+
+* Mon Mar 06 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.3-1mdk
+- first mdk release
 
