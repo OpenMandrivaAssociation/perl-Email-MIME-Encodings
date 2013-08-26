@@ -1,14 +1,14 @@
 %define module	    Email-MIME-Encodings
-%define up_version  1.313
+%define upstream_version  1.314
 
 Name:		perl-%{module}
-Version:	%perl_convert_version %{up_version}
-Release:	2
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
 Summary:	A unified interface to MIME encoding and decoding
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
+Source:		http://www.cpan.org/modules/by-module/Email/Email-MIME-Encodings-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildArch:	noarch
@@ -20,7 +20,7 @@ the right thing happen.
 Provides a number of useful methods for manipulating MIME messages.
 
 %prep
-%setup -q -n %{module}-%{up_version} 
+%setup -q -n %{module}-%{upstream_version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -65,4 +65,5 @@ make test
 
 * Mon Mar 06 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.3-1mdk
 - first mdk release
+
 
