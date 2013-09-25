@@ -1,5 +1,5 @@
 %define module	    Email-MIME-Encodings
-%define upstream_version  1.314
+%define upstream_version 1.315
 
 Name:		perl-%{module}
 Version:	%perl_convert_version %{upstream_version}
@@ -11,6 +11,7 @@ URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/Email/Email-MIME-Encodings-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Capture::Tiny)
 BuildArch:	noarch
 
 %description
@@ -65,5 +66,6 @@ make test
 
 * Mon Mar 06 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.3-1mdk
 - first mdk release
+
 
 
