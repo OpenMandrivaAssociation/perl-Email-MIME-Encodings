@@ -7,7 +7,7 @@ Release:	3
 Summary:	A unified interface to MIME encoding and decoding
 License:	GPL or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
+URL:		https://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/Email/Email-MIME-Encodings-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
