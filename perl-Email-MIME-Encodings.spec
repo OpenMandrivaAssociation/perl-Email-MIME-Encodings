@@ -10,6 +10,7 @@ Group:		Development/Perl
 URL:		https://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/Email/Email-MIME-Encodings-%{upstream_version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires: perl(Capture::Tiny)
 BuildArch:	noarch
